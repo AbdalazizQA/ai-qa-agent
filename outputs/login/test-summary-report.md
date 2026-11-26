@@ -45,20 +45,22 @@
 | Test cases planned | 23 |
 | Automated | 23 |
 | Manual-only | 0 |
-| Executed | 23 login test cases (+1 environment smoke test, `SetupSmokeTest`) = 24 TestNG results |
-| Passed | 24 (23 login + 1 smoke) |
+| Executed | 23 (23 TestNG results) |
+| Passed | 23 |
 | Failed | 0 |
 | Skipped | 0 |
 | Broken (Allure) | 0 |
-| Pass rate | **100%** (23/23 login, 24/24 overall) |
-| Duration | 27.8 s for the test run (Allure); 30.8 s Maven total for `mvn clean test` |
+| Pass rate | **100%** (23/23) |
+| Duration | 19.9 s for the test run (Allure); 31.4 s Maven total for `mvn clean test` |
 
 How the 23 test cases map to test methods:
 - **21 TestNG methods** in `LoginTests`.
 - **Two data-driven methods** with three rows each: TC_LOGIN_009–011 and TC_LOGIN_012, 013, 022.
 - **Separate Allure entries:** each data row appears under its own test case ID.
 
-Sources: `target/surefire-reports/TEST-TestSuite.xml` and `target/allure-results` (24 `*-result.json` files, 0 failure attachments).
+Sources: `target/surefire-reports/TEST-TestSuite.xml` and `target/allure-results` (23 `*-result.json` files, 0 failure attachments).
+
+*Counts updated 2026-11-27 from a re-run after `SetupSmokeTest` was intentionally removed. The earlier run had 24 results (23 login tests + 1 smoke test), all passed.*
 
 ## 4. Results by Requirement
 
@@ -114,7 +116,7 @@ Coverage: 9 of 9 requirements are covered and passing, with no coverage gaps.
 ### C2: Project files reverted between stages (process issue)
 
 **What happened**
-- Before this run, the whole `src/test` tree had been removed: test code, page objects, `BaseTest`, `ConfigReader`, `config.properties` and `SetupSmokeTest`.
+- Before this run, the whole `src/test` tree had been removed: test code, page objects, `BaseTest`, `ConfigReader`, `config.properties` and `SetupSmokeTest`. (`SetupSmokeTest` was later removed on purpose, because it had the URL written into the code, and it is no longer part of the suite.)
 - The C1 corrections in `analysis.md`, `test-cases.csv`, `rtm.md` and the `pom.xml` Allure results directory were also reverted.
 
 **How it was handled**
