@@ -1,0 +1,18 @@
+# Build output and test results
+target/
+allure-results/
+
+# IDE
+.idea/
+*.iml
+
+# Claude Code local settings (machine-specific, may contain secrets)
+.claude/settings.local.json
+
+# Tool caches / generated files
+.allure/
+.playwright-mcp/
+
+# OS / editor
+.DS_Store
+.vscode/
