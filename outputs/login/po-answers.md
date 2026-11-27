@@ -11,3 +11,4 @@
 - Q10: Update: Re-verified during automation. No defect — closing the error resets the state correctly.
 - Q11, Q12, Q14, Q15, Q16: Out of scope for this release.
 - Q13: Out of scope; only standard_user and locked_out_user are in scope.
+- Update: problem_user login added to scope (TC_LOGIN_024).

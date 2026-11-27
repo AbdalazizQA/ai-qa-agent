@@ -98,6 +98,15 @@ public class LoginTests extends BaseTest {
                 assertThat(page).hasURL(ProductsPage.url()));
     }
 
+    @Test(description = "TC_LOGIN_024: Problem user is redirected to the Products page")
+    @Severity(SeverityLevel.CRITICAL)
+    public void TC_LOGIN_024_problemUserIsRedirectedToProductsUrl() {
+        Allure.step("Log in as problem_user", () ->
+                loginPage.loginAs(ConfigReader.problemUsername(), ConfigReader.password()));
+        Allure.step("Verify the URL is " + ProductsPage.url(), () ->
+                assertThat(page).hasURL(ProductsPage.url()));
+    }
+
     @Test(description = "TC_LOGIN_005: Valid user sees the Products page title")
     @Severity(SeverityLevel.CRITICAL)
     public void TC_LOGIN_005_validUserSeesProductsTitle() {
@@ -342,4 +351,5 @@ public class LoginTests extends BaseTest {
         Allure.step("Verify the URL is " + ProductsPage.url(), () ->
                 assertThat(page).hasURL(ProductsPage.url()));
     }
+
 }

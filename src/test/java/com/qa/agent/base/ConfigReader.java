@@ -52,6 +52,10 @@ public final class ConfigReader {
         return get("locked.username");
     }
 
+    public static String problemUsername() {
+        return get("problem.username");
+    }
+
     public static String password() {
         return get("password");
     }
